@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Autofficina Viola – Officina meccanica, elettrauto, gomme, revisioni e impianti GPL a Binasco (MI). Dal 1989 il tuo punto di riferimento.">
+    <title>Autofficina Viola – Binasco (MI)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+         :root {
+            --red: #C0392B;
+            --red-dark: #96281B;
+            --red-light: #E74C3C;
+            --anthracite: #1C1C1E;
+            --anthracite-2: #2C2C2E;
+            --steel: #8E8E93;
+            --light: #F5F5F0;
+            --white: #FFFFFF;
+            --border: rgba(0, 0, 0, 0.08);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: var(--white);
+            color: var(--anthracite);
+            overflow-x: hidden;
+        }
+        /* ── NAV ── */
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: var(--anthracite);
+            border-bottom: 3px solid var(--red);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            height: 64px;
+        }
+        
+        .nav-logo {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            line-height: 1;
+        }
+        
+        .nav-logo span {
+            color: var(--red-light);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--red-light);
+        }
+        
+        .nav-cta {
+            background: var(--red);
+            color: var(--white) !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 3px;
+            transition: background 0.2s !important;
+        }
+        
+        .nav-cta:hover {
+            background: var(--red-dark) !important;
+            color: var(--white) !important;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        /* ── HERO ── */
+        
+        #hero {
+            min-height: 100vh;
+            background: var(--anthracite);
+            display: flex;
+            align-items: center;
+            padding-top: 64px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+        
+        .hero-accent {
+            position: absolute;
+            right: -120px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 600px;
+            height: 600px;
+            border: 80px solid rgba(192, 57, 43, 0.12);
+            border-radius: 50%;
+        }
+        
+        .hero-accent2 {
+            position: absolute;
+            right: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 320px;
+            height: 320px;
+            border: 3px solid rgba(192, 57, 43, 0.3);
+            border-radius: 50%;
+        }
+        
+        .hero-inner {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: var(--red);
+            color: var(--white);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding: 0.35rem 1rem;
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 0.92;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+        
+        .hero-title em {
+            font-style: normal;
+            color: var(--red-light);
+        }
+        
+        .hero-sub {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 480px;
+            line-height: 1.65;
+            margin-bottom: 2.5rem;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--red);
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.85rem 2rem;
+            border-radius: 3px;
+            transition: background 0.2s, transform 0.15s;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            background: var(--red-dark);
+            transform: translateY(-1px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.85rem 2rem;
+            border-radius: 3px;
+            border: 1.5px solid rgba(255, 255, 255, 0.25);
+            transition: border-color 0.2s, color 0.2s;
+            display: inline-block;
+        }
+        
+        .btn-outline:hover {
+            border-color: rgba(255, 255, 255, 0.6);
+            color: var(--white);
+        }
+        
+        .hero-stats {
+            margin-top: 4rem;
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {}
+        
+        .stat-num {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1;
+        }
+        
+        .stat-num span {
+            color: var(--red-light);
+        }
+        
+        .stat-label {
+            font-size: 0.82rem;
+            color: var(--steel);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.25rem;
+        }
+        /* ── STRIP ── */
+        
+        .strip {
+            background: var(--red);
+            padding: 1rem 2rem;
+            text-align: center;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        
+        .strip a {
+            color: var(--white);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        /* ── SECTION BASE ── */
+        
+        section {
+            padding: 5rem 2rem;
+        }
+        
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .section-eyebrow {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--red);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            color: var(--anthracite);
+        }
+        
+        .section-desc {
+            font-size: 1.05rem;
+            color: #555;
+            max-width: 560px;
+            line-height: 1.7;
+        }
+        /* ── SERVICES ── */
+        
+        #servizi {
+            background: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5px;
+            margin-top: 3rem;
+            background: var(--border);
+            border: 1.5px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .service-card {
+            background: var(--white);
+            padding: 2rem 1.75rem;
+            transition: background 0.2s;
+            cursor: default;
+        }
+        
+        .service-card:hover {
+            background: var(--anthracite);
+        }
+        
+        .service-card:hover .svc-icon {
+            background: var(--red);
+            color: var(--white);
+        }
+        
+        .service-card:hover .svc-title {
+            color: var(--white);
+        }
+        
+        .service-card:hover .svc-desc {
+            color: rgba(255, 255, 255, 0.55);
+        }
+        
+        .svc-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 4px;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            transition: background 0.2s, color 0.2s;
+            color: var(--red);
+        }
+        
+        .svc-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        .svc-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--anthracite);
+            margin-bottom: 0.6rem;
+            transition: color 0.2s;
+        }
+        
+        .svc-desc {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            transition: color 0.2s;
+        }
+        /* ── CHI SIAMO ── */
+        
+        #chisiamo {
+            background: var(--white);
+        }
+        
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .about-visual {
+            position: relative;
+        }
+        
+        .about-box {
+            background: var(--anthracite);
+            border-radius: 4px;
+            padding: 3rem 2.5rem;
+            color: var(--white);
+        }
+        
+        .about-box-year {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 5rem;
+            font-weight: 800;
+            color: var(--red);
+            line-height: 1;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .about-box-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.55);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 600;
+        }
+        
+        .about-box-divider {
+            width: 40px;
+            height: 3px;
+            background: var(--red);
+            margin: 1.5rem 0;
+        }
+        
+        .about-box p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+        }
+        
+        .about-tag {
+            display: inline-block;
+            background: var(--red);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.25rem 0.75rem;
+            border-radius: 2px;
+            margin-top: 1.5rem;
+        }
+        
+        .about-content .section-desc {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-list {
+            list-style: none;
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .about-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.5;
+        }
+        
+        .about-list li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            min-width: 6px;
+            background: var(--red);
+            border-radius: 50%;
+            margin-top: 0.55rem;
+        }
+        /* ── CONTATTI ── */
+        
+        #contatti {
+            background: var(--anthracite);
+            color: var(--white);
+        }
+        
+        #contatti .section-title {
+            color: var(--white);
+        }
+        
+        #contatti .section-eyebrow {
+            color: var(--red-light);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-block {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--red-light);
+        }
+        
+        .contact-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        .contact-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--steel);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+        
+        .contact-value {
+            font-size: 1.05rem;
+            color: var(--white);
+            font-weight: 500;
+        }
+        
+        .contact-value a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: border-color 0.2s;
+        }
+        
+        .contact-value a:hover {
+            border-color: var(--red-light);
+        }
+        
+        .map-wrap {
+            border-radius: 4px;
+            overflow: hidden;
+            height: 320px;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .map-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(60%) invert(5%);
+        }
+        
+        .orari-table {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+        
+        .orari-table tr td {
+            padding: 0.4rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .orari-table tr td:first-child {
+            color: rgba(255, 255, 255, 0.55);
+            width: 130px;
+        }
+        
+        .orari-table tr td:last-child {
+            color: var(--white);
+            font-weight: 500;
+        }
+        
+        .orari-table tr.chiuso td {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #25D366;
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.8rem 1.5rem;
+            border-radius: 3px;
+            margin-top: 1rem;
+            transition: background 0.2s;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #1ebe57;
+        }
+        
+        .whatsapp-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+        /* ── FOOTER ── */
+        
+        footer {
+            background: #111;
+            padding: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+            line-height: 1.7;
+        }
+        
+        footer a {
+            color: rgba(255, 255, 255, 0.45);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: var(--red-light);
+        }
+        /* ── RESPONSIVE ── */
+        
+        @media (max-width: 800px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                position: absolute;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: var(--anthracite);
+                padding: 1rem 0;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-links li {
+                border-top: 1px solid rgba(255, 255, 255, 0.06);
+            }
+            .nav-links a {
+                display: block;
+                padding: 0.9rem 2rem;
+            }
+            .nav-cta {
+                margin: 0.5rem 2rem;
+                display: block;
+                text-align: center;
+                border-radius: 3px;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hero-accent,
+            .hero-accent2 {
+                display: none;
+            }
+            .hero-stats {
+                gap: 2rem;
+            }
+            .about-layout {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <a href="#hero" class="nav-logo">Autofficina <span>Viola</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#servizi">Servizi</a></li>
+            <li><a href="#chisiamo">Chi siamo</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+            <li><a href="tel:+393936693761" class="nav-cta">Chiama ora</a></li>
+        </ul>
+        <button class="hamburger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-grid"></div>
+        <div class="hero-accent"></div>
+        <div class="hero-accent2"></div>
+        <div class="hero-inner">
+            <div class="hero-badge">Officina a Binasco (MI) · Dal 1989</div>
+            <h1 class="hero-title">La tua auto<br>in <em>mani</em><br>esperte.</h1>
+            <p class="hero-sub">Manutenzione, riparazioni, revisioni e molto altro. Ogni marca, ogni modello. Un punto di riferimento da oltre 35 anni per Binasco e comuni limitrofi.</p>
+            <div class="hero-actions">
+                <a href="#contatti" class="btn-primary">Prenota un appuntamento</a>
+                <a href="#servizi" class="btn-outline">I nostri servizi</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-num">35<span>+</span></div>
+                    <div class="stat-label">Anni di esperienza</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">Ogni<span>*</span></div>
+                    <div class="stat-label">Marca e modello</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">GPL<span>/</span>CH4</div>
+                    <div class="stat-label">Centro autorizzato</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STRIP -->
+    <div class="strip">
+        📞 Chiamaci: <a href="tel:+393936693761">+39 393 6693761</a> &nbsp;·&nbsp; Via dei Giovi 14, Binasco (MI) &nbsp;·&nbsp; Lun–Ven 8:00–12:30 / 14:30–18:30
+    </div>
+
+    <!-- SERVIZI -->
+    <section id="servizi">
+        <div class="section-inner">
+            <p class="section-eyebrow">Cosa facciamo</p>
+            <h2 class="section-title">I nostri servizi</h2>
+            <p class="section-desc">Dalla manutenzione ordinaria alle riparazioni più complesse: siamo attrezzati per intervenire su qualsiasi veicolo con diagnosi precisa e lavori mirati.</p>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <div class="svc-icon">
+                        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <div class="svc-title">Meccanica generale</div>
+                    <p class="svc-desc">Tagliandi, freni, frizione, distribuzione e tutte le riparazioni meccaniche su ogni marca e modello.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="svc-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+                    </div>
+                    <div class="svc-title">Diagnostica elettronica</div>
+                    <p class="svc-desc">Diagnosi computerizzata per identificare rapidamente qualsiasi anomalia su ogni sistema del veicolo.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="svc-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/></svg>
+                    </div>
+                    <div class="svc-title">Pneumatici</div>
+                    <p class="svc-desc">Vendita, montaggio, bilanciatura e convergenza gomme per auto, fuoristrada e furgoni.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="svc-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                    </div>
+                    <div class="svc-title">Revisioni</div>
+                    <p class="svc-desc">Centro revisioni auto. Verifichiamo che il tuo veicolo superi la revisione periodica senza intoppi.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="svc-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                    </div>
+                    <div class="svc-title">Impianti GPL e Metano</div>
+                    <p class="svc-desc">Centro autorizzato per installazione, manutenzione e revisione di bombole GPL e metano. Conformi alle normative vigenti.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="svc-icon">
+                        <svg viewBox="0 0 24 24"><rect x="1" y="6" width="22" height="12" rx="2"/><circle cx="7" cy="12" r="2"/><circle cx="17" cy="12" r="2"/><path d="M7 12h10"/></svg>
+                    </div>
+                    <div class="svc-title">Cambio automatico</div>
+                    <p class="svc-desc">Manutenzione specializzata del cambio automatico: sostituzione olio e pulizia professionale con prodotti certificati.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="svc-icon">
+                        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <div class="svc-title">Elettrauto</div>
+                    <p class="svc-desc">Riparazione e diagnosi di impianti elettrici, batteria, alternatore, motorini d'avviamento e sistemi di illuminazione.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="svc-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    </div>
+                    <div class="svc-title">Antifurti satellitari</div>
+                    <p class="svc-desc">Installazione di antifurti meccanici e satellitari con apparecchiature certificate e garantite. Protezione totale per il tuo veicolo.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="svc-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
+                    </div>
+                    <div class="svc-title">Cristalli auto</div>
+                    <p class="svc-desc">Sostituzione e riparazione cristalli, parabrezza e lunotti con tecnici specializzati. Compila il form per un preventivo.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CHI SIAMO -->
+    <section id="chisiamo">
+        <div class="section-inner">
+            <div class="about-layout">
+                <div class="about-visual">
+                    <div class="about-box">
+                        <span class="about-box-year">1989</span>
+                        <div class="about-box-label">Anno di fondazione</div>
+                        <div class="about-box-divider"></div>
+                        <p>L'Autofficina Viola nasce a Binasco con il solo titolare Riccardo Viola. Negli anni, grazie alla fiducia dei clienti, il team è cresciuto con la collaborazione di Alessandro Locci e due dipendenti qualificati.</p>
+                        <span class="about-tag">Da oltre 35 anni al tuo fianco</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <p class="section-eyebrow">Chi siamo</p>
+                    <h2 class="section-title">Un'officina che conosce ogni auto</h2>
+                    <p class="section-desc">Da oltre trent'anni siamo il punto di riferimento per la manutenzione e riparazione di auto a Binasco e nei comuni limitrofi della provincia di Milano.</p>
+                    <p class="section-desc" style="margin-top: 1rem;">Il continuo aggiornamento professionale, unito a investimenti costanti in attrezzature all'avanguardia, permette al nostro staff di effettuare diagnosi precise e riparazioni mirate su qualunque veicolo, di qualsiasi marca.</p>
+                    <ul class="about-list">
+                        <li>Aggiornamento continuo sulle nuove tecnologie automobilistiche</li>
+                        <li>Attrezzature diagnostiche di ultima generazione</li>
+                        <li>Personale qualificato e certificato per impianti GPL e metano</li>
+                        <li>Trasparenza nei preventivi, senza sorprese</li>
+                        <li>Assistenza rapida e puntuale su ogni tipo di veicolo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATTI -->
+    <section id="contatti">
+        <div class="section-inner">
+            <p class="section-eyebrow">Vieni a trovarci</p>
+            <h2 class="section-title">Dove siamo e come contattarci</h2>
+
+            <div class="contact-grid">
+                <div class="contact-block">
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.93-.93a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">Telefono</div>
+                            <div class="contact-value"><a href="tel:+393936693761">+39 393 669 3761</a></div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">Indirizzo</div>
+                            <div class="contact-value"><a href="https://maps.google.com/?q=Via+dei+Giovi+14+Binasco+MI" target="_blank" rel="noopener">Via dei Giovi, 14<br>20082 Binasco (MI)</a></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="contact-label" style="margin-bottom: 0.75rem; color: var(--steel);">Orari di apertura</div>
+                        <table class="orari-table">
+                            <tr>
+                                <td>Lunedì – Venerdì</td>
+                                <td>08:00 – 12:30 / 14:30 – 18:30</td>
+                            </tr>
+                            <tr class="chiuso">
+                                <td>Sabato</td>
+                                <td>Chiuso</td>
+                            </tr>
+                            <tr class="chiuso">
+                                <td>Domenica</td>
+                                <td>Chiuso</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div>
+                        <a href="https://wa.me/393936693761" class="whatsapp-btn" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>                            Scrivici su WhatsApp
+                        </a>
+                    </div>
+
+                </div>
+
+                <div>
+                    <div class="map-wrap">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2799.3!2d9.1053!3d45.3367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47810b8b4e99c0b3%3A0x1c1e3c0c9b3b3b3b!2sVia+dei+Giovi%2C+14%2C+20082+Binasco+MI!5e0!3m2!1sit!2sit!4v1700000000000!5m2!1sit!2sit"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mappa Autofficina Viola Binasco">
+          </iframe>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--steel);">
+                        📍 Facilmente raggiungibile dalla SS35 dei Giovi. Parcheggio disponibile davanti all'officina.
+                    </p>
+                    <a href="https://maps.google.com/?q=Via+dei+Giovi+14+Binasco+MI" target="_blank" rel="noopener" class="btn-outline" style="display: inline-block; margin-top: 1rem; font-size: 0.9rem; padding: 0.65rem 1.5rem;">Ottieni indicazioni →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p style="margin-bottom: 0.4rem;">
+            <strong style="color: rgba(255,255,255,0.6);">Autofficina Viola</strong> · Via dei Giovi, 14 · 20082 Binasco (MI) · P.IVA / CF del titolare
+        </p>
+        <p>
+            <a href="tel:+393936693761">+39 393 669 3761</a> &nbsp;·&nbsp;
+            <a href="#servizi">Servizi</a> &nbsp;·&nbsp;
+            <a href="#chisiamo">Chi siamo</a> &nbsp;·&nbsp;
+            <a href="#contatti">Contatti</a>
+        </p>
+        <p style="margin-top: 0.75rem; font-size: 0.78rem;">© 2025 Autofficina Viola – Tutti i diritti riservati</p>
+    </footer>
+
+    <script>
+        const burger = document.getElementById('burger');
+        const navLinks = document.getElementById('navLinks');
+
+        burger.addEventListener('click', () => {
+            const open = navLinks.classList.toggle('open');
+            burger.setAttribute('aria-expanded', open);
+        });
+
+        navLinks.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                burger.setAttribute('aria-expanded', false);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
